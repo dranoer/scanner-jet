@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_image_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:padding="16dp">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/rl_cropimage_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipChildren="false"
+                android:clipToPadding="false" />
+
+            <me.pqpo.smartcropperlib.view.CropImageView
+                android:id="@+id/iv_preview_crop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:padding="@dimen/_12sdp"
+                app:civAutoScanEnable="true"
+                app:civLineColor="@color/light_txt_color"
+                app:civMagnifierCrossColor="@color/light_txt_color"
+                app:civPointColor="@color/light_txt_color"
+                app:civPointFillColor="@color/light_txt_color"
+                app:civShowEdgeMidPoint="true"
+                app:civShowGuideLine="true" />
+
+            <ImageView
+                android:id="@+id/img_delete"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:src="@drawable/ic_delete"
+                android:visibility="invisible" />
+
+            <RelativeLayout
+                android:id="@+id/rl_animate_alpha_container"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:clipChildren="true"
+                android:visibility="invisible">
+
+                <ImageView
+                    android:id="@+id/img_animate_alpha"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="fitXY" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/img_animate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                android:visibility="invisible" />
+        </FrameLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_camera"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="26dp"
+        android:background="@drawable/shape_border_dot_gray_0"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_rect_lt" />
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_rect_rt" />
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/ic_rect_bl" />
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/ic_rect_br" />
+
+        <ImageView
+            android:id="@+id/cameraImageView"
+            android:layout_width="46dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_carama_add_0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cameraImageView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:text="@string/tap_to_add_new_page"
+            android:textColor="#a5acb4"
+            android:textSize="12sp" />
+    </RelativeLayout>
+</LinearLayout>
