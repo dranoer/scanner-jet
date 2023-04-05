@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.gulofy.scaniby">
+    package="com.gulofy.scannerjet">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -21,7 +21,7 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
-        android:name=".MyApp"
+        android:name="com.gulofy.scannerjet.MyApp"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
@@ -31,7 +31,7 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.CamScanner"
+        android:theme="@style/Theme.ScannerJet"
         android:usesCleartextTraffic="true">
 
         <provider
@@ -53,18 +53,18 @@
             android:label="@string/app_name" >
         </activity>
 
-        <activity android:name=".activity.BaseActivity"
+        <activity android:name="com.gulofy.scannerjet.activity.BaseActivity"
             android:exported="true"
 
             ></activity>
 
-        <activity android:name=".activity.LangSupportBaseActivity"
+        <activity android:name="com.gulofy.scannerjet.activity.LangSupportBaseActivity"
             android:exported="false"/>
-        <activity android:name=".activity.LanguageSelectionActivity"
+        <activity android:name="com.gulofy.scannerjet.activity.LanguageSelectionActivity"
             android:exported="false"/>
 
         <activity
-            android:name=".activity.SplashActivity"
+            android:name="com.gulofy.scannerjet.activity.MainActivity"
             android:resizeableActivity="false"
             android:exported="true"
             android:screenOrientation="portrait">
@@ -74,16 +74,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MultiEditActivity"
+        <activity android:name="com.gulofy.scannerjet.activity.MultiEditActivity"
             android:exported="true"
             android:screenOrientation="portrait"></activity>
+<!--        <activity-->
+<!--            android:name=".activity.MainActivity"-->
+<!--            android:screenOrientation="portrait"-->
+<!--            android:exported="true"-->
+<!--            android:windowSoftInputMode="adjustPan" />-->
         <activity
-            android:name=".activity.MainActivity"
-            android:screenOrientation="portrait"
-            android:exported="true"
-            android:windowSoftInputMode="adjustPan" />
-        <activity
-            android:name=".activity.ScannerActivity"
+            android:name="com.gulofy.scannerjet.activity.ScannerActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
@@ -92,61 +92,61 @@
             android:screenOrientation="portrait"
             android:theme="@style/uCropStyle" />
         <activity
-            android:name=".activity.IDCardPreviewActivity"
+            android:name="com.gulofy.scannerjet.activity.IDCardPreviewActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.CropDocumentActivity"
+            android:name="com.gulofy.scannerjet.activity.CropDocumentActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.CurrentFilterActivity"
+            android:name="com.gulofy.scannerjet.activity.CurrentFilterActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.SavedDocumentActivity"
+            android:name="com.gulofy.scannerjet.activity.SavedDocumentActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.DocumentEditorActivity"
+            android:name="com.gulofy.scannerjet.activity.DocumentEditorActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".activity.SavedEditDocumentActivity"
+            android:name="com.gulofy.scannerjet.activity.SavedEditDocumentActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.SavedDocumentPreviewActivity"
+            android:name="com.gulofy.scannerjet.activity.SavedDocumentPreviewActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.NoteActivity"
+            android:name="com.gulofy.scannerjet.activity.NoteActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.ImageToTextActivity"
+            android:name="com.gulofy.scannerjet.activity.ImageToTextActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.GroupDocumentActivity"
+            android:name="com.gulofy.scannerjet.activity.GroupDocumentActivity"
             android:exported="true"
 
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.PDFViewerActivity"
+            android:name="com.gulofy.scannerjet.activity.PDFViewerActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.QRGenerateActivity"
+            android:name="com.gulofy.scannerjet.activity.QRGenerateActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.QRReaderActivity"
+            android:name="com.gulofy.scannerjet.activity.QRReaderActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.PrivacyPolicyActivity"
+            android:name="com.gulofy.scannerjet.activity.PrivacyPolicyActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
 

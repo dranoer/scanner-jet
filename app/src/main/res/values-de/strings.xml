@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CamScanner</string>
+    <string name="app_name">ScannerJet</string>
 
     <string name="admob_native_ad">/6499/example/native</string>
     <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>

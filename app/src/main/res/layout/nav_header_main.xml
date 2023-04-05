@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/_160sdp"
-    android:background="@drawable/ic_doc_scanner"
+    android:layout_height="80dp"
+    android:background="@color/colorPrimary"
     android:gravity="center"
     android:orientation="vertical">
 
@@ -13,6 +13,5 @@
         android:singleLine="true"
         android:text="@string/app_name"
         android:textColor="@color/white"
-        android:textSize="@dimen/_25sdp" />
-
+        android:textSize="20sp" />
 </LinearLayout>

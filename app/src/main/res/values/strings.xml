@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CamScanner</string>
+    <string name="app_name">ScannerJet</string>
 
     <string name="admob_native_ad">/6499/example/native</string>
     <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
@@ -201,7 +201,7 @@
     <string name="share_app">Share App</string>
     <string name="rate_us">Rate Us</string>
     <string name="lang">Language</string>
-    <string name="all_doc">All Docs</string>
+    <string name="all_doc">All</string>
     <string name="move_success">Move successfully</string>
     <string name="name_required">Folder name is required</string>
     <string name="white_space_removed">Please remove space between folder name</string>
