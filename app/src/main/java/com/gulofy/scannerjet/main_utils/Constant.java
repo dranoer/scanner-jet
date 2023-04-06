@@ -53,7 +53,7 @@ public class Constant {
             Intent sendIntent = new Intent();
             sendIntent.setAction(Intent.ACTION_SEND);
             sendIntent.putExtra(Intent.EXTRA_TEXT,
-                    "Free Document Scanner at: https://play.google.com/store/apps/details?id=" + activity.getPackageName());
+                    "ScannerJet - Free PDF and Photo scanner at: https://play.google.com/store/apps/details?id=" + activity.getPackageName());
             sendIntent.setType("text/plain");
             activity.startActivity(sendIntent);
          } catch (Exception e) {
