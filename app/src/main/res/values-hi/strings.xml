@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">ScannerJet</string>
 
-    <string name="admob_native_ad">/6499/example/native</string>
-    <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
-    <string name="admob_banner_id">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="admob_interstitial_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="admob_native_ad">ca-app-pub-3150812380984089/8720368551</string>
+    <string name="admob_app_id">ca-app-pub-3150812380984089~1416593601</string>
+    <string name="admob_banner_id">ca-app-pub-3150812380984089/5164266920</string>
+    <string name="admob_interstitial_id">ca-app-pub-3150812380984089/5468067998</string>
     <string name="selectLanguage">Select Langauge</string>
 
     <string name = "white_space_removed">कृपया फ़ोल्डर के नाम के बीच की जगह हटा दें</string>
