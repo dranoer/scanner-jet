@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">ScannerJet</string>
 
-    <string name="admob_native_ad">ca-app-pub-3150812380984089/8720368551</string>
-    <string name="admob_app_id">ca-app-pub-3150812380984089~1416593601</string>
-    <string name="admob_banner_id">ca-app-pub-3150812380984089/5164266920</string>
-    <string name="admob_interstitial_id">ca-app-pub-3150812380984089/5468067998</string>
-    <string name="selectLanguage">Select Langauge</string>
+    <string name="admob_native_ad">ca-app-pub-3706080646520947/6276455463</string>
+    <string name="admob_app_id">ca-app-pub-3706080646520947~7453805766</string>
+    <string name="admob_banner_id">ca-app-pub-3706080646520947/7809028989</string>
+    <string name="admob_interstitial_id">ca-app-pub-3706080646520947/6468027159</string>
+    <string name="selectLanguage">Select Language</string>
 
 
     <string name="white_space_removed">Αφαιρέστε το διάστημα μεταξύ του ονόματος φακέλου</string>
