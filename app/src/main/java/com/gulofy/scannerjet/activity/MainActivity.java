@@ -58,6 +58,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.ads.nativead.NativeAdView;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.FirebaseApp;
 import com.itextpdf.text.pdf.PdfObject;
 import com.nguyenhoanglam.imagepicker.model.Image;
 
@@ -247,7 +248,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         setDrawerData();
         bindView();
         AdsUtils.loadGoogleInterstitialAd(mainActivity, MainActivity.this);
-
+        FirebaseApp.initializeApp(this);
     }
 
 
