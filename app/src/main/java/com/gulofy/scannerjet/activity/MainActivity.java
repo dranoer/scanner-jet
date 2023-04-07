@@ -59,6 +59,8 @@ import com.google.android.gms.ads.nativead.NativeAdView;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.itextpdf.text.pdf.PdfObject;
 import com.nguyenhoanglam.imagepicker.model.Image;
 
@@ -249,8 +251,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         bindView();
         AdsUtils.loadGoogleInterstitialAd(mainActivity, MainActivity.this);
         FirebaseApp.initializeApp(this);
+        FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(true);
+        FirebaseAnalytics.getInstance(this).setAnalyticsCollectionEnabled(true);
     }
-
 
     private void init() {
         drawer_ly = (DrawerLayout) findViewById(R.id.drawer_ly);
