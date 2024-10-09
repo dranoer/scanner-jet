@@ -13,9 +13,9 @@ android {
     defaultConfig {
         applicationId 'com.gulofy.scannerjet'
         minSdkVersion 21
-        targetSdkVersion 34
-        versionCode 1
-        versionName "1.0"
+        targetSdkVersion 35
+        versionCode 4
+        versionName "1.1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         ndk {
@@ -31,8 +31,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     sourceSets {
         main {
@@ -42,14 +42,16 @@ android {
         }
     }
 
-    lintOptions {
+    namespace 'com.gulofy.scannerjet'
+    buildFeatures {
+        buildConfig true
+    }
+    androidResources {
+        noCompress 'lite'
+    }
+    lint {
         abortOnError false
     }
-    aaptOptions {
-        noCompress "tflite"
-        noCompress "lite"
-    }
-    namespace 'com.gulofy.scannerjet'
 
     /* Reduce apk size */
     /*splits {
