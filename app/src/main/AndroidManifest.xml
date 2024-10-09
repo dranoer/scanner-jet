@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.gulofy.scannerjet">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -223,7 +222,9 @@
             android:name="com.onesignal.PermissionsActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
-        <receiver android:name="com.onesignal.NotificationDismissReceiver" />
+        <receiver
+            android:exported="true"
+            android:name="com.onesignal.NotificationDismissReceiver" />
         <receiver android:name="com.onesignal.BootUpReceiver"
             android:exported="true">
             <intent-filter>

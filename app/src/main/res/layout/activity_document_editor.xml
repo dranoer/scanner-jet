@@ -646,15 +646,12 @@
             android:layout_height="match_parent"
             android:layout_above="@+id/rl_bottom">
 
-            <com.kyanogen.signatureview.SignatureView
+            <com.github.gcacace.signaturepad.views.SignaturePad
                 android:id="@+id/signature_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:backgroundColor="#00000000"
-                app:enableSignature="true"
-                app:penColor="@color/txt_color"
-                app:penSize="5dp" />
-
+                app:penColor="@color/txt_color" />
 
             <RelativeLayout
                 android:id="@+id/rl_signature_list"

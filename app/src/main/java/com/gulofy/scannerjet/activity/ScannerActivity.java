@@ -19,6 +19,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -31,6 +32,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -191,6 +193,7 @@ public class ScannerActivity extends BaseActivity implements ActivityCompat.OnRe
     private View v_idcard;
     private View v_photo;
 
+    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
     @Override
     public void onResume() {
         super.onResume();
@@ -202,17 +205,17 @@ public class ScannerActivity extends BaseActivity implements ActivityCompat.OnRe
             ActivityCompat.requestPermissions(this, new String[]{"android.permission.CAMERA"}, 1);
         }
 
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".ScannerGalleryActivity"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".ScannerGalleryActivity"), RECEIVER_EXPORTED);
 
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".CropDocumentActivity2"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".CropDocumentActivity2"), RECEIVER_EXPORTED);
 
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".IDCardPreviewActivity"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".IDCardPreviewActivity"), RECEIVER_EXPORTED);
 
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".SavedEditDocumentActivity3"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".SavedEditDocumentActivity3"), RECEIVER_EXPORTED);
 
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".UcropActivity"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".UcropActivity"), RECEIVER_EXPORTED);
 
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".DocumentEditorActivity_Scanner"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".DocumentEditorActivity_Scanner"), RECEIVER_EXPORTED);
     }
 
     @Override

@@ -31,6 +31,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -133,21 +134,22 @@ public class GroupDocumentActivity extends BaseActivity implements View.OnClickL
     public TextView tv_title;
     private AdView adView;
 
+    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
     @Override
     public void onResume() {
         tv_title.setText(current_group);
         new setGroupDocAdapter().execute(new String[0]);
         super.onResume();
 
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".PDFViewerActivity2"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".PDFViewerActivity2"), RECEIVER_EXPORTED);
 
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".DocumentGalleryActivity"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".DocumentGalleryActivity"), RECEIVER_EXPORTED);
 
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".CropDocumentActivity4"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".CropDocumentActivity4"), RECEIVER_EXPORTED);
 
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".ScannerActivity2"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".ScannerActivity2"), RECEIVER_EXPORTED);
 
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".SavedDocumentPreviewActivity"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".SavedDocumentPreviewActivity"), RECEIVER_EXPORTED);
     }
 
     @Override

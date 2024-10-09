@@ -8,12 +8,15 @@ import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.RequiresApi;
 
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.nativead.NativeAdView;
@@ -60,12 +63,13 @@ public class SavedDocumentActivity extends BaseActivity implements View.OnClickL
     public String preview_doc_grp_name;
     private AdView adView;
 
+    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
     @Override
     public void onResume() {
         super.onResume();
 
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".ScannerActivity_Retake2"));
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".DocumentEditorActivity_Saved"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".ScannerActivity_Retake2"), RECEIVER_EXPORTED);
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".DocumentEditorActivity_Saved"), RECEIVER_EXPORTED);
     }
 
     @Override

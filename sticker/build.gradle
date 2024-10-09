@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdk 35
+    buildToolsVersion '35.0.0'
 
     defaultConfig {
         minSdkVersion 9
-        targetSdkVersion 30
+        targetSdkVersion 34
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -17,6 +17,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    namespace 'com.xiaopo.flying.sticker'
 }
 
 dependencies {

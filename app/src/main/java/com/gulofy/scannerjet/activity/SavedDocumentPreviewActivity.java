@@ -14,6 +14,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.text.method.HideReturnsTransformationMethod;
@@ -28,6 +29,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
@@ -115,16 +117,17 @@ public class SavedDocumentPreviewActivity extends BaseActivity implements View.O
     public ViewPagerFixed viewPager;
     private AdView adView;
 
+    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
     @Override
     public void onResume() {
         super.onResume();
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".DocumentEditorActivity_SavedPreview"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".DocumentEditorActivity_SavedPreview"), RECEIVER_EXPORTED);
 
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".PDFViewerActivity_Preview"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".PDFViewerActivity_Preview"), RECEIVER_EXPORTED);
 
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".NoteActivity_Preview"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".NoteActivity_Preview"), RECEIVER_EXPORTED);
 
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".ImageToTextActivity_Preview"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".ImageToTextActivity_Preview"), RECEIVER_EXPORTED);
     }
 
     @Override

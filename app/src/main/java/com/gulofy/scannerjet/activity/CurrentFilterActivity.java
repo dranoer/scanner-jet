@@ -7,11 +7,14 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.RequiresApi;
 
 import com.github.chrisbanes.photoview.PhotoView;
 import com.google.android.gms.ads.AdView;
@@ -68,12 +71,13 @@ public class CurrentFilterActivity extends BaseActivity implements View.OnClickL
     public Bitmap tempBitmap;
     private AdView adView;
 
+    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
     @Override
     public void onResume() {
         super.onResume();
 
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".SavedDocumentActivity"));
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".IDCardPreviewActivity2"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".SavedDocumentActivity"), RECEIVER_EXPORTED);
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".IDCardPreviewActivity2"), RECEIVER_EXPORTED);
     }
 
     @Override

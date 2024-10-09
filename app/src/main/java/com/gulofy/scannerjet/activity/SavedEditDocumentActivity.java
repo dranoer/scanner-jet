@@ -12,6 +12,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.text.method.HideReturnsTransformationMethod;
@@ -25,6 +26,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
@@ -127,14 +129,15 @@ public class SavedEditDocumentActivity extends BaseActivity implements View.OnCl
     public ArrayList<BookModel> viewPagerList = new ArrayList<>();
     private AdView adView;
 
+    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
     @Override
     public void onResume() {
         super.onResume();
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".DocumentEditorActivity_SavedEdit"));
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".DocumentEditorActivity_SavedEdit2"));
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".PDFViewerActivity"));
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".NoteActivity"));
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".ImageToTextActivity"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".DocumentEditorActivity_SavedEdit"), RECEIVER_EXPORTED);
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".DocumentEditorActivity_SavedEdit2"), RECEIVER_EXPORTED);
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".PDFViewerActivity"), RECEIVER_EXPORTED);
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".NoteActivity"), RECEIVER_EXPORTED);
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".ImageToTextActivity"), RECEIVER_EXPORTED);
     }
 
     @Override

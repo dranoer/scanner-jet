@@ -35,6 +35,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -48,9 +49,10 @@ import com.flask.colorpicker.ColorPickerView;
 import com.flask.colorpicker.OnColorSelectedListener;
 import com.flask.colorpicker.builder.ColorPickerClickListener;
 import com.flask.colorpicker.builder.ColorPickerDialogBuilder;
+import com.github.gcacace.signaturepad.views.SignaturePad;
 import com.google.android.gms.ads.nativead.NativeAdView;
 import com.itextpdf.text.html.HtmlTags;
-import com.kyanogen.signatureview.SignatureView;
+//import com.kyanogen.signatureview.SignatureView;
 import com.nguyenhoanglam.imagepicker.model.Image;
 
 import com.nguyenhoanglam.imagepicker.ui.imagepicker.ImagePicker;
@@ -70,8 +72,8 @@ import com.gulofy.scannerjet.main_utils.Constant;
 import com.gulofy.scannerjet.models.EditToolType;
 import com.gulofy.scannerjet.utils.AdmobAds;
 import com.gulofy.scannerjet.utils.AdsUtils;
-import com.watermark.androidwm_light.WatermarkBuilder;
-import com.watermark.androidwm_light.bean.WatermarkText;
+//import com.watermark.androidwm_light.WatermarkBuilder;
+//import com.watermark.androidwm_light.bean.WatermarkText;
 import com.xiaopo.flying.sticker.BitmapStickerIcon;
 import com.xiaopo.flying.sticker.DeleteIconEvent;
 import com.xiaopo.flying.sticker.DrawableSticker;
@@ -248,7 +250,7 @@ public class DocumentEditorActivity extends BaseActivity implements View.OnClick
     protected SignatureAdapter signatureAdapter;
     private ArrayList<String> signatureList = new ArrayList<>();
 
-    public SignatureView signature_view;
+    public SignaturePad signature_view;
 
     public StickerView stickerView;
     protected TextSticker textSticker;
@@ -270,10 +272,11 @@ public class DocumentEditorActivity extends BaseActivity implements View.OnClick
     public void onStopTrackingTouch(SeekBar seekBar) {
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
     @Override
     public void onResume() {
         super.onResume();
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".SavedEditDocumentActivity"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".SavedEditDocumentActivity"), RECEIVER_EXPORTED);
     }
 
     @Override
@@ -360,7 +363,7 @@ public class DocumentEditorActivity extends BaseActivity implements View.OnClick
         iv_close_opacity = (ImageView) findViewById(R.id.iv_close_opacity);
         iv_apply_opacity = (ImageView) findViewById(R.id.iv_apply_opacity);
         rl_signature = (RelativeLayout) findViewById(R.id.rl_signature);
-        signature_view = (SignatureView) findViewById(R.id.signature_view);
+        signature_view = (SignaturePad) findViewById(R.id.signature_view);
         ly_seek_view = (LinearLayout) findViewById(R.id.ly_seek_view);
         sb_pen_size = (SeekBar) findViewById(R.id.sb_pen_size);
         sb_pen_color = (ColorSeekBar) findViewById(R.id.sb_pen_color);
@@ -439,7 +442,7 @@ public class DocumentEditorActivity extends BaseActivity implements View.OnClick
         setupSticker();
         stickerView.removeAllStickers();
         signa_pen_color = getResources().getColor(R.color.selected_txt_color);
-        signature_view.setPenSize((float) sb_pen_size.getProgress());
+//        signature_view.setPenSize((float) sb_pen_size.getProgress());
         signature_view.setPenColor(signa_pen_color);
         sb_pen_color.setOnColorChangeListener(new ColorSeekBar.OnColorChangeListener() {
             @Override
@@ -543,7 +546,7 @@ public class DocumentEditorActivity extends BaseActivity implements View.OnClick
                 rl_signature.setVisibility(View.VISIBLE);
                 ly_seek_view.setVisibility(View.VISIBLE);
                 rl_signature_list.setVisibility(View.GONE);
-                signature_view.clearCanvas();
+                signature_view.clearView();
                 return;
             case WATERMARK:
                 et_watermark_txt.setText("");
@@ -681,7 +684,7 @@ public class DocumentEditorActivity extends BaseActivity implements View.OnClick
                 slideDownAnimation(ly_overlay);
                 return;
             case R.id.iv_apply_signature:
-                if (!signature_view.isBitmapEmpty()) {
+                if (!signature_view.isEmpty()) {
                     Bitmap signatureBitmap = signature_view.getSignatureBitmap();
                     new saveSignature().execute(new Bitmap[]{signatureBitmap});
                     return;
@@ -703,7 +706,7 @@ public class DocumentEditorActivity extends BaseActivity implements View.OnClick
                     rl_watermark_color.setVisibility(View.GONE);
                     rl_watermark_opacity.setVisibility(View.GONE);
                     rl_watermark.setVisibility(View.GONE);
-                    WatermarkBuilder.create(getApplicationContext(), iv_editImg.getSource()).loadWatermarkText(new WatermarkText(et_watermark_txt.getText().toString()).setPositionX(2.0d).setPositionY(2.0d).setTextFont(watermarkFont).setTextColor(et_watermark_txt.getCurrentTextColor()).setTextAlpha(sb_watermark_opacity.getProgress()).setRotation(-30.0d).setTextSize(20.0d)).setTileMode(true).getWatermark().setToImageView(iv_editImg.getSource());
+//                    WatermarkBuilder.create(getApplicationContext(), iv_editImg.getSource()).loadWatermarkText(new WatermarkText(et_watermark_txt.getText().toString()).setPositionX(2.0d).setPositionY(2.0d).setTextFont(watermarkFont).setTextColor(et_watermark_txt.getCurrentTextColor()).setTextAlpha(sb_watermark_opacity.getProgress()).setRotation(-30.0d).setTextSize(20.0d)).setTileMode(true).getWatermark().setToImageView(iv_editImg.getSource());
                     hideSoftKeyboard(et_watermark_txt);
                     return;
                 }
@@ -821,7 +824,7 @@ public class DocumentEditorActivity extends BaseActivity implements View.OnClick
                             default:
                                 switch (id) {
                                     case R.id.iv_close_signature:
-                                        signature_view.clearCanvas();
+                                        signature_view.clearView();
                                         ly_edit_tools.setVisibility(View.VISIBLE);
                                         iv_done.setVisibility(View.VISIBLE);
                                         rl_signature.setVisibility(View.GONE);
@@ -853,7 +856,7 @@ public class DocumentEditorActivity extends BaseActivity implements View.OnClick
                                             public void onClick(DialogInterface dialogInterface, int i, Integer[] numArr) {
                                                 brush_color = i;
                                                 photoEditor.setBrushColor(i);
-                                                photoEditor.setOpacity(Color.alpha(i));
+//                                                photoEditor.setOpacity(Color.alpha(i));
                                                 iv_highlight.setImageResource(R.drawable.bic_highlight_selection);
                                                 iv_erase.setImageResource(R.drawable.bic_erase);
 
@@ -992,7 +995,7 @@ public class DocumentEditorActivity extends BaseActivity implements View.OnClick
                                                 rl_signature_list.setVisibility(View.VISIBLE);
                                                 return;
                                             case R.id.tv_clear_signature:
-                                                signature_view.clearCanvas();
+                                                signature_view.clearView();
                                                 return;
                                             default:
                                                 switch (id) {
@@ -1310,7 +1313,7 @@ public class DocumentEditorActivity extends BaseActivity implements View.OnClick
                 }
                 return;
             case R.id.sb_pen_size:
-                signature_view.setPenSize((float) i);
+//                signature_view.setPenSize((float) i);
                 return;
             case R.id.sb_watermark_opacity:
                 et_watermark_txt.setAlpha(((float) i) / 255.0f);
@@ -1683,7 +1686,7 @@ public class DocumentEditorActivity extends BaseActivity implements View.OnClick
             iv_done.setVisibility(View.VISIBLE);
             slideDownAnimation(ly_opacity);
         } else if (rl_signature.getVisibility() == View.VISIBLE) {
-            signature_view.clearCanvas();
+            signature_view.clearView();
             ly_edit_tools.setVisibility(View.VISIBLE);
             iv_done.setVisibility(View.VISIBLE);
             rl_signature.setVisibility(View.GONE);

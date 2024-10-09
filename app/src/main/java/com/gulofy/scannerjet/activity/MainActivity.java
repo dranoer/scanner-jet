@@ -45,6 +45,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
@@ -172,24 +173,25 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     public TextView tv_empty;
     private ImageView iv_folder;
 
+    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
     @Override
     public void onResume() {
         new setAllGroupAdapter().execute(new String[0]);
         super.onResume();
 
         Log.e("on resume called","fff");
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".PrivacyPolicyActivity"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".PrivacyPolicyActivity"), RECEIVER_EXPORTED);
 
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".QRGenerateActivity"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".QRGenerateActivity"), RECEIVER_EXPORTED);
 
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".QRReaderActivity"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".QRReaderActivity"), RECEIVER_EXPORTED);
 
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".MainGalleryActivity"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".MainGalleryActivity"), RECEIVER_EXPORTED);
 
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".ScannerActivity"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".ScannerActivity"), RECEIVER_EXPORTED);
 
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".GroupDocumentActivity"));
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".CropDocumentActivity"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".GroupDocumentActivity"), RECEIVER_EXPORTED);
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".CropDocumentActivity"), RECEIVER_EXPORTED);
 
         SharedPreferences sharedPreferences = getSharedPreferences("MyLangPref", MODE_PRIVATE);
         String lang_code = sharedPreferences.getString(LocaleUtils.SELECTED_LANGUAGE, LocaleUtils.ENGLISH);

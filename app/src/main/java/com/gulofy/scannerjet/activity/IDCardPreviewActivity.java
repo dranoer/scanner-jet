@@ -21,6 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.core.internal.view.SupportMenu;
 
 import com.bumptech.glide.Glide;
@@ -32,7 +33,7 @@ import com.flask.colorpicker.builder.ColorPickerClickListener;
 import com.flask.colorpicker.builder.ColorPickerDialogBuilder;
 import com.nguyenhoanglam.imagepicker.model.Image;
 import com.nguyenhoanglam.imagepicker.ui.imagepicker.ImagePicker;
-import com.takwolf.android.aspectratio.AspectRatioLayout;
+//import com.takwolf.android.aspectratio.AspectRatioLayout;
 import com.gulofy.scannerjet.R;
 import com.gulofy.scannerjet.db.DBHelper;
 import com.gulofy.scannerjet.models.DBModel;
@@ -44,6 +45,7 @@ import com.gulofy.scannerjet.scrapbook.TextStickerConfig;
 import com.gulofy.scannerjet.main_utils.BitmapUtils;
 import com.gulofy.scannerjet.main_utils.Constant;
 import com.gulofy.scannerjet.utils.AdsUtils;
+import com.takwolf.android.aspectratiolayout.AspectRatioLayout;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -114,13 +116,14 @@ public class IDCardPreviewActivity extends BaseActivity implements View.OnClickL
     public void onTextStickerSelected(TextStickerConfig textStickerConfig, boolean z) {
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
     @Override
     public void onResume() {
         super.onResume();
 
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".DocumentEditorActivity_IDCard"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".DocumentEditorActivity_IDCard"), RECEIVER_EXPORTED);
 
-        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".IDCardGalleryActivity"));
+        registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".IDCardGalleryActivity"), RECEIVER_EXPORTED);
     }
 
     @Override
