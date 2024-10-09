@@ -207,7 +207,7 @@ public class GroupDocumentActivity extends BaseActivity implements View.OnClickL
             case R.id.ly_doc_camera:
                 Constant.inputType = "GroupItem";
                 Constant.IdentifyActivity = "ScannerActivity2";
-                AdsUtils.showGoogleInterstitialAd(GroupDocumentActivity.this, true);
+                AdsUtils.showGoogleInterstitialAd(GroupDocumentActivity.this, false);
                 return;
             case R.id.iv_doc_more:
                 PopupMenu popupMenu = new PopupMenu(this, view);
@@ -266,7 +266,7 @@ public class GroupDocumentActivity extends BaseActivity implements View.OnClickL
                 Constant.inputType = "GroupItem";
                 Constant.current_camera_view = "Document";
                 Constant.IdentifyActivity = "DocumentGalleryActivity";
-                AdsUtils.showGoogleInterstitialAd(GroupDocumentActivity.this, true);
+                AdsUtils.showGoogleInterstitialAd(GroupDocumentActivity.this, false);
                 return true;
             case R.id.rename:
                 updateGroupName(current_group);
@@ -320,7 +320,7 @@ public class GroupDocumentActivity extends BaseActivity implements View.OnClickL
                             }
                             Constant.original = bitmap;
                             Constant.IdentifyActivity = "CropDocumentActivity4";
-                            AdsUtils.showGoogleInterstitialAd(GroupDocumentActivity.this, true);
+                            AdsUtils.showGoogleInterstitialAd(GroupDocumentActivity.this, false);
                         }
                     });
                 } else {
@@ -332,7 +332,7 @@ public class GroupDocumentActivity extends BaseActivity implements View.OnClickL
                             }
                             Constant.original = bitmap;
                             Constant.IdentifyActivity = "CropDocumentActivity4";
-                            AdsUtils.showGoogleInterstitialAd(GroupDocumentActivity.this, true);
+                            AdsUtils.showGoogleInterstitialAd(GroupDocumentActivity.this, false);
                         }
                     });
                 }
@@ -398,7 +398,7 @@ public class GroupDocumentActivity extends BaseActivity implements View.OnClickL
                 pdfUri = BaseActivity.getURIFromFile(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/" + getResources().getString(R.string.app_name) + "/" + group_name + ".pdf", GroupDocumentActivity.this);
                 selected_group_name = group_name;
                 Constant.IdentifyActivity = "PDFViewerActivity2";
-                AdsUtils.showGoogleInterstitialAd(GroupDocumentActivity.this, true);
+                AdsUtils.showGoogleInterstitialAd(GroupDocumentActivity.this, false);
             }
             progressDialog.dismiss();
         }
@@ -843,7 +843,7 @@ public class GroupDocumentActivity extends BaseActivity implements View.OnClickL
         Constant.inputType = "GroupItem";
         selected_position = i;
         Constant.IdentifyActivity = "SavedDocumentPreviewActivity";
-        AdsUtils.showGoogleInterstitialAd(GroupDocumentActivity.this, true);
+        AdsUtils.showGoogleInterstitialAd(GroupDocumentActivity.this, false);
 
     }
 

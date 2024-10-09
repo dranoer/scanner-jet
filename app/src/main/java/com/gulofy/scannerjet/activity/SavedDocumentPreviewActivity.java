@@ -274,7 +274,7 @@ public class SavedDocumentPreviewActivity extends BaseActivity implements View.O
                     e.printStackTrace();
                 }
                 Constant.IdentifyActivity = "DocumentEditorActivity_SavedPreview";
-                AdsUtils.showGoogleInterstitialAd(SavedDocumentPreviewActivity.this, true);
+                AdsUtils.showGoogleInterstitialAd(SavedDocumentPreviewActivity.this, false);
                 return;
             case OPENPDF:
                 try {
@@ -304,7 +304,7 @@ public class SavedDocumentPreviewActivity extends BaseActivity implements View.O
             case NOTE:
                 noteTxt = dataBaseHelper.getSingleNote(edit_doc_grp_name, current_doc_name);
                 Constant.IdentifyActivity = "NoteActivity_Preview";
-                AdsUtils.showGoogleInterstitialAd(SavedDocumentPreviewActivity.this, true);
+                AdsUtils.showGoogleInterstitialAd(SavedDocumentPreviewActivity.this, false);
                 return;
             case ImageToText:
                 try {
@@ -315,7 +315,7 @@ public class SavedDocumentPreviewActivity extends BaseActivity implements View.O
                     e4.printStackTrace();
                 }
                 Constant.IdentifyActivity = "ImageToTextActivity_Preview";
-                AdsUtils.showGoogleInterstitialAd(SavedDocumentPreviewActivity.this, true);
+                AdsUtils.showGoogleInterstitialAd(SavedDocumentPreviewActivity.this, false);
                 return;
             case SHARE:
                 try {
@@ -425,7 +425,7 @@ public class SavedDocumentPreviewActivity extends BaseActivity implements View.O
             progressDialog.dismiss();
             selected_group_name = group_name;
             Constant.IdentifyActivity = "PDFViewerActivity_Preview";
-            AdsUtils.showGoogleInterstitialAd(SavedDocumentPreviewActivity.this, true);
+            AdsUtils.showGoogleInterstitialAd(SavedDocumentPreviewActivity.this, false);
         }
     }
 

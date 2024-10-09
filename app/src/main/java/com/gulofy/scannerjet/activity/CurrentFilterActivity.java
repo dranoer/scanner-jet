@@ -178,7 +178,7 @@ public class CurrentFilterActivity extends BaseActivity implements View.OnClickL
                     Constant.singleSideBitmap = original;
                 }
                 Constant.IdentifyActivity = "IDCardPreviewActivity2";
-                AdsUtils.showGoogleInterstitialAd(CurrentFilterActivity.this, true);
+                AdsUtils.showGoogleInterstitialAd(CurrentFilterActivity.this, false);
                 return;
             case R.id.iv_ocv_black:
                 showProgressDialog();
@@ -346,7 +346,7 @@ public class CurrentFilterActivity extends BaseActivity implements View.OnClickL
             selected_group_name = group_name;
             current_docs_name = this.current_doc_name;
             Constant.IdentifyActivity = "SavedDocumentActivity";
-            AdsUtils.showGoogleInterstitialAd(CurrentFilterActivity.this, true);
+            AdsUtils.showGoogleInterstitialAd(CurrentFilterActivity.this, false);
         }
     }
 

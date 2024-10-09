@@ -70,7 +70,7 @@ public class GroupDocAdapter extends RecyclerView.Adapter<GroupDocAdapter.ViewHo
             public void onClick(View v) {
                 Constant.inputType = "GroupItem";
                 Constant.IdentifyActivity = "ScannerActivity2";
-                AdsUtils.showGoogleInterstitialAd(activity, true);
+                AdsUtils.showGoogleInterstitialAd(activity, false);
             }
         });
 

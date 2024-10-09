@@ -542,12 +542,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                     if (requestCode != 3) {
                         if (requestCode == 4) {
                             Constant.IdentifyActivity = "QRGenerateActivity";
-                            AdsUtils.showGoogleInterstitialAd(MainActivity.this, true);
+                            AdsUtils.showGoogleInterstitialAd(MainActivity.this, false);
                             return;
                         }
                     } else {
                         Constant.IdentifyActivity = "QRReaderActivity";
-                        AdsUtils.showGoogleInterstitialAd(MainActivity.this, true);
+                        AdsUtils.showGoogleInterstitialAd(MainActivity.this, false);
                     }
                 } else {
                     Constant.inputType = "Group";
@@ -557,7 +557,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             } else {
                 Constant.inputType = "Group";
                 Constant.IdentifyActivity = "MainGalleryActivity";
-                AdsUtils.showGoogleInterstitialAd(MainActivity.this, true);
+                AdsUtils.showGoogleInterstitialAd(MainActivity.this, false);
             }
         }
     }

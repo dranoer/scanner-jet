@@ -159,11 +159,11 @@ public class SavedDocumentActivity extends BaseActivity implements View.OnClickL
                 return;
             case R.id.llEdit:
                 Constant.IdentifyActivity = "DocumentEditorActivity_Saved";
-                AdsUtils.showGoogleInterstitialAd(SavedDocumentActivity.this,true);
+                AdsUtils.showGoogleInterstitialAd(SavedDocumentActivity.this,false);
                 return;
             case R.id.llRetake:
                 Constant.IdentifyActivity = "ScannerActivity_Retake2";
-                AdsUtils.showGoogleInterstitialAd(SavedDocumentActivity.this,true);
+                AdsUtils.showGoogleInterstitialAd(SavedDocumentActivity.this,false);
                 return;
             case R.id.llRotate:
                 Bitmap bitmap = Constant.original;

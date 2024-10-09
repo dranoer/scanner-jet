@@ -340,13 +340,13 @@ public class CropDocumentActivity extends BaseActivity implements View.OnClickLi
                 return;
             case R.id.iv_retake:
                 Constant.IdentifyActivity = "ScannerActivity_Retake";
-                AdsUtils.showGoogleInterstitialAd(CropDocumentActivity.this, true);
+                AdsUtils.showGoogleInterstitialAd(CropDocumentActivity.this, false);
                 return;
             case R.id.ly_current_filter:
                 if (iv_preview_crop.canRightCrop()) {
                     Constant.original = iv_preview_crop.crop();
                     Constant.IdentifyActivity = "CurrentFilterActivity";
-                    AdsUtils.showGoogleInterstitialAd(CropDocumentActivity.this, true);
+                    AdsUtils.showGoogleInterstitialAd(CropDocumentActivity.this, false);
                     return;
                 }
                 return;
@@ -450,7 +450,7 @@ public class CropDocumentActivity extends BaseActivity implements View.OnClickLi
             selected_group_name = group_name;
             current_docs_name = current_doc_name;
             Constant.IdentifyActivity = "DocumentEditorActivity_Crop";
-            AdsUtils.showGoogleInterstitialAd(CropDocumentActivity.this, true);
+            AdsUtils.showGoogleInterstitialAd(CropDocumentActivity.this, false);
         }
     }
 

@@ -657,13 +657,13 @@ public class MultiEditActivity extends AppCompatActivity implements SeekBar.OnSe
                 return;
             case R.id.iv_retake:
                 Constant.IdentifyActivity = "ScannerActivity_Retake";
-                AdsUtils.showGoogleInterstitialAd(MultiEditActivity.this, true);
+                AdsUtils.showGoogleInterstitialAd(MultiEditActivity.this, false);
                 return;
             case R.id.ly_current_filter:
                 if (iv_preview_crop.canRightCrop()) {
                     Constant.original = iv_preview_crop.crop();
                     Constant.IdentifyActivity = "CurrentFilterActivity";
-                    AdsUtils.showGoogleInterstitialAd(MultiEditActivity.this, true);
+                    AdsUtils.showGoogleInterstitialAd(MultiEditActivity.this, false);
                     return;
                 }
                 return;
@@ -752,7 +752,7 @@ public class MultiEditActivity extends AppCompatActivity implements SeekBar.OnSe
             selected_group_name = group_name;
             current_docs_name = current_doc_name;
             Constant.IdentifyActivity = "DocumentEditorActivity_Crop";
-            AdsUtils.showGoogleInterstitialAd(MultiEditActivity.this, true);
+            AdsUtils.showGoogleInterstitialAd(MultiEditActivity.this, false);
         }
     }
 

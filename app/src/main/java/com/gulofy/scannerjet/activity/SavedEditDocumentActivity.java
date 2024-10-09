@@ -250,11 +250,11 @@ public class SavedEditDocumentActivity extends BaseActivity implements View.OnCl
             case EDIT:
                 if (from.equals("ScannerActivity")) {
                     Constant.IdentifyActivity = "DocumentEditorActivity_SavedEdit2";
-                    AdsUtils.showGoogleInterstitialAd(SavedEditDocumentActivity.this, true);
+                    AdsUtils.showGoogleInterstitialAd(SavedEditDocumentActivity.this, false);
                     return;
                 }
                 Constant.IdentifyActivity = "DocumentEditorActivity_SavedEdit";
-                AdsUtils.showGoogleInterstitialAd(SavedEditDocumentActivity.this, true);
+                AdsUtils.showGoogleInterstitialAd(SavedEditDocumentActivity.this, false);
                 return;
             case OPENPDF:
                 ArrayList arrayList = new ArrayList();
@@ -270,11 +270,11 @@ public class SavedEditDocumentActivity extends BaseActivity implements View.OnCl
             case NOTE:
                 noteTxt = dataBaseHelper.getSingleNote(edit_doc_grp_name, current_doc_name);
                 Constant.IdentifyActivity = "NoteActivity";
-                AdsUtils.showGoogleInterstitialAd(SavedEditDocumentActivity.this, true);
+                AdsUtils.showGoogleInterstitialAd(SavedEditDocumentActivity.this, false);
                 return;
             case ImageToText:
                 Constant.IdentifyActivity = "ImageToTextActivity";
-                AdsUtils.showGoogleInterstitialAd(SavedEditDocumentActivity.this, true);
+                AdsUtils.showGoogleInterstitialAd(SavedEditDocumentActivity.this, false);
                 return;
             case SHARE:
                 shareGroupDoc();
@@ -413,7 +413,7 @@ public class SavedEditDocumentActivity extends BaseActivity implements View.OnCl
             progressDialog.dismiss();
             selected_group_name = group_name;
             Constant.IdentifyActivity = "PDFViewerActivity";
-            AdsUtils.showGoogleInterstitialAd(SavedEditDocumentActivity.this, true);
+            AdsUtils.showGoogleInterstitialAd(SavedEditDocumentActivity.this, false);
         }
     }
 
