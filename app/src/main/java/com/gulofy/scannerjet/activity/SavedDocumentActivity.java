@@ -95,8 +95,8 @@ public class SavedDocumentActivity extends BaseActivity implements View.OnClickL
     }
 
     private void init() {
-        adView = findViewById(R.id.adView);
-        AdsUtils.showGoogleBannerAd(this, adView);
+//        adView = findViewById(R.id.adView);
+//        AdsUtils.showGoogleBannerAd(this, adView);
         AdsUtils.loadGoogleInterstitialAd(this, SavedDocumentActivity.this);
 
         iv_back = (ImageView) findViewById(R.id.iv_back);

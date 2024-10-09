@@ -116,7 +116,7 @@ public class CurrentFilterActivity extends BaseActivity implements View.OnClickL
         }
 
         AdsUtils.loadGoogleInterstitialAd(this, CurrentFilterActivity.this);
-        AdsUtils.showGoogleBannerAd(this, adView);
+//        AdsUtils.showGoogleBannerAd(this, adView);
     }
 
     @Override

@@ -158,8 +158,8 @@ public class SavedDocumentPreviewActivity extends BaseActivity implements View.O
     }
 
     private void init() {
-        adView = findViewById(R.id.adView);
-        AdsUtils.showGoogleBannerAd(this, adView);
+//        adView = findViewById(R.id.adView);
+//        AdsUtils.showGoogleBannerAd(this, adView);
         AdsUtils.loadGoogleInterstitialAd(this, SavedDocumentPreviewActivity.this);
 
         iv_back = (ImageView) findViewById(R.id.iv_back);

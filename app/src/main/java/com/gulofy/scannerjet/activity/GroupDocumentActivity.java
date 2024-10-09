@@ -189,8 +189,8 @@ public class GroupDocumentActivity extends BaseActivity implements View.OnClickL
         rv_group_doc = (RecyclerView) findViewById(R.id.rv_group_doc);
         iv_doc_camera = (ImageView) findViewById(R.id.iv_doc_camera);
         ly_doc_camera = (LinearLayout) findViewById(R.id.ly_doc_camera);
-        adView = findViewById(R.id.adView);
-        AdsUtils.showGoogleBannerAd(this, adView);
+//        adView = findViewById(R.id.adView);
+//        AdsUtils.showGoogleBannerAd(this, adView);
         AdsUtils.loadGoogleInterstitialAd(this, GroupDocumentActivity.this);
 
     }

@@ -48,8 +48,8 @@ public class LanguageSelectionActivity extends AppCompatActivity implements OnIt
         recLanguage = findViewById(R.id.recLanguage);
         imgDone = findViewById(R.id.imgDone);
         imgDone.setOnClickListener(this);
-        adsView=findViewById(R.id.adView);
-        AdsUtils.showGoogleBannerAd(LanguageSelectionActivity.this, adsView);
+//        adsView=findViewById(R.id.adView);
+//        AdsUtils.showGoogleBannerAd(LanguageSelectionActivity.this, adsView);
         listOfLanguages.clear();
         listOfLanguages = Languages.getLanguages();
 

@@ -167,8 +167,8 @@ public class SavedEditDocumentActivity extends BaseActivity implements View.OnCl
     }
 
     private void init() {
-        adView = findViewById(R.id.adView);
-        AdsUtils.showGoogleBannerAd(this, adView);
+//        adView = findViewById(R.id.adView);
+//        AdsUtils.showGoogleBannerAd(this, adView);
         AdsUtils.loadGoogleInterstitialAd(this, SavedEditDocumentActivity.this);
 
         iv_back = (ImageView) findViewById(R.id.iv_back);

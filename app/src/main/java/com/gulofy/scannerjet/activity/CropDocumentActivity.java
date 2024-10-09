@@ -143,7 +143,7 @@ public class CropDocumentActivity extends BaseActivity implements View.OnClickLi
             changeBrightness(20);
         }
         AdsUtils.loadGoogleInterstitialAd(this, CropDocumentActivity.this);
-        AdsUtils.showGoogleBannerAd(this, adView);
+//        AdsUtils.showGoogleBannerAd(this, adView);
 
 
         seekBarBrightness.setOnSeekBarChangeListener(this);
