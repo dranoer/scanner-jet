@@ -385,7 +385,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
                 }
                 else {
-                    ActivityCompat.requestPermissions(this, new String[]{"android.permission.READ_EXTERNAL_STORAGE", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.CAMERA"}, 2);
+                    ActivityCompat.requestPermissions(this, new String[]{"android.permission.READ_MEDIA_VIDEO", "android.permission.READ_MEDIA_AUDIO", "android.permission.READ_MEDIA_IMAGES", "android.permission.CAMERA"}, 2);
 
                 }
                 return;
@@ -483,6 +483,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (permissions.length == 0) {
             return;
         }
@@ -614,7 +615,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 new setAllGroupAdapter().execute(new String[0]);
                 break;
             case R.id.import_from_gallery:
-                ActivityCompat.requestPermissions(this, new String[]{"android.permission.READ_EXTERNAL_STORAGE", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.CAMERA"}, 1);
+                ActivityCompat.requestPermissions(this, new String[]{"android.permission.READ_MEDIA_VIDEO", "android.permission.READ_MEDIA_AUDIO", "android.permission.READ_MEDIA_IMAGES", "android.permission.CAMERA"}, 1);
                 break;
             case R.id.list_view:
                 editor = preferences.edit();
@@ -1605,12 +1606,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             if (drawer_ly.isDrawerOpen(GravityCompat.START)) {
                 drawer_ly.closeDrawer(GravityCompat.START);
             }
-            ActivityCompat.requestPermissions(this, new String[]{"android.permission.READ_EXTERNAL_STORAGE", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.CAMERA"}, 3);
+            ActivityCompat.requestPermissions(this, new String[]{"android.permission.READ_MEDIA_VIDEO", "android.permission.READ_MEDIA_AUDIO", "android.permission.READ_MEDIA_IMAGES", "android.permission.CAMERA"}, 3);
         } else if (i == 2) {
             if (drawer_ly.isDrawerOpen(GravityCompat.START)) {
                 drawer_ly.closeDrawer(GravityCompat.START);
             }
-            ActivityCompat.requestPermissions(this, new String[]{"android.permission.READ_EXTERNAL_STORAGE", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.CAMERA"}, 4);
+            ActivityCompat.requestPermissions(this, new String[]{"android.permission.READ_MEDIA_VIDEO", "android.permission.READ_MEDIA_AUDIO", "android.permission.READ_MEDIA_IMAGES", "android.permission.CAMERA"}, 4);
         } else if (i == 3) {
             if (drawer_ly.isDrawerOpen(GravityCompat.START)) {
                 drawer_ly.closeDrawer(GravityCompat.START);
