@@ -12,4 +12,5 @@
 !.idea/detekt.xml
 /app/screenshots/debug/screenshots-default/
 /app/screenshots/debug/screenshots-compose-default/
+/app/google-services.json
 out
