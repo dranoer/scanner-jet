@@ -162,6 +162,9 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:exported="true"
             android:value="@string/admob_app_id" />
+        <meta-data
+            android:name="firebase_performance_logcat_enabled"
+            android:value="true" />
 
         <activity
             android:name="com.nguyenhoanglam.imagepicker.ui.imagepicker.ImagePickerActivity"
