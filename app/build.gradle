@@ -7,15 +7,15 @@ plugins {
 
 android {
     namespace = "com.gulofy.scannerjet"
-    compileSdk 35
-    buildToolsVersion '35.0.0'
+    compileSdk 36
+    buildToolsVersion '36.0.0'
 
     defaultConfig {
         applicationId 'com.gulofy.scannerjet'
-        minSdkVersion 21
-        targetSdkVersion 35
-        versionCode 4
-        versionName "1.1.1"
+        minSdkVersion 23
+        targetSdkVersion 36
+        versionCode 5
+        versionName "1.2.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         ndk {
